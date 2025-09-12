@@ -25,13 +25,13 @@ profile_image: ./assets/images/profile-image/avatar.jpeg
 
 # Link your resume
 # You can place your resume in assets/resume/{resume.pdf or add external link such as pdf saved in google drive 
-resume-url: https://drive.google.com/file/d/13Z3duVzh-gguPU5r03oJVEE6rV9rd3DS/view?usp=sharing # or /assets/resume/resume.pdf
+resume-url: https://drive.google.com/file/d/1Q_9jRPk16D6nj8lp5q21nS7ElHJX-isy/view?usp=sharing # or /assets/resume/resume.pdf
 
 
 # Set up external links - this will show up as small icons next to your name.
 
 external-links:    # input only your own url slug. The icons with missing entries will not appear.
-  linkedin: www.linkedin.com/in/mateo-albrecht    # https://www.linkedin.com/in/{your url slug} 
+  linkedin: mateo-albrecht    # https://www.linkedin.com/in/{your url slug} 
   github:    # https://github.com/{your url slug} 
   stackoverflow:      # https://stackoverflow.com/users/{your url slug}
   medium:            # https://medium.com/@{your url slug} 
@@ -65,7 +65,7 @@ skills:
 
 
 # Contact Form Setup. Setup an account and copy over the key. When someone fills out the form, it will be received in your email.
-formspree-key:   https://formspree.io/f/{8-digit key}
+formspree-key:   https://formspree.io/f/myzdvjgb
 
 
 
