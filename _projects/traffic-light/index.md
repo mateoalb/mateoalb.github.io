@@ -39,6 +39,7 @@ This project demonstrates the design and implementation of a **traffic light con
   - In highway green state, if the sensor is high (and ≥30 seconds elapsed), it switches to yellow.  
   - In farm green state, if the sensor goes low, it transitions back to yellow.  
 
-{% include image-gallery.html images="fsm.png" height="400" %}  
+- FSM DESGIGN
+  {% include image-gallery.html images="fsm.png" height="400" %}  
 
 ---
