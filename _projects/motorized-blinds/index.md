@@ -21,6 +21,19 @@ This project showcases my custom built motorized blind, designed to integrate se
   - Servo Motor Version
   - DC Motor Version
 - 3D-Printed Connector – Custom-designed attachment connects the motor shaft to the blinds’ tilt rod.
-- [Homekit](https://github.com/HomeSpan/HomeSpan/tree/master) Control– Operated directly from an apple device.
+- [Homekit](https://github.com/HomeSpan/HomeSpan/tree/master) Control – Operated directly from an apple device.
 
+## Hardware
+- Esp32 - needed for homespan
+- DC Motor + Driver Board / Servo
+- Breadbaord
+- Power
+    - 12V DC power suply - needed depnding on motor used
+    - USB-C breakout - optioinal makes easy power delivery
+    - On Board
+ 
+---
+## 3D Printed
+- To bridge the gap between the motors and the blinds’ tilt rod, I designed a custom 3D-printed connector. This part ensures a secure, reliable fit while remaining easy to remove or swap. The connector was ajdusted for each type
+{% include image-gallery.html images="mount3Dfile.png" height="400" %} 
   
