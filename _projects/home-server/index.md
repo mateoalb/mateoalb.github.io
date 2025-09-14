@@ -8,7 +8,7 @@ skills:
 - Networking
 - Media Streaming (Plex)
 - IoT / Home Automation
-main-image: /homeServer.png
+main-image: /homeServer.webp
 ---
 
 ---
