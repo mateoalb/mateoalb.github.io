@@ -157,3 +157,6 @@ This project showcases my custom built motorized blind, designed to integrate se
     }
 
   ```
+  ---
+# Summary
+- This project successfully combined hardware, software, and custom 3D-printed parts to create a functional and reliable smart blind system. It demonstrates my ability to integrate electronics with mechanical design for practical home automation solutions.
