@@ -13,7 +13,7 @@ main-image: /tLight.jpg
 
 ---
 # Overview
-This project demonstrates the design and implementation of a **traffic light controller** for a highway–farm road intersection. Built on the Zybo Z7-10 FPGA board, the system ensures safe traffic flow by cycling through green, yellow, and red lights with appropriate timing. The design uses a Mealy FSM written in behavioral Verilog and integrates a sensor to dynamically adjust light changes depending on traffic conditions.
+This project demonstrates the design and implementation of a **traffic light controller** for a highway farm road intersection. Built on the Zybo Z7-10 FPGA board, the system ensures safe traffic flow by cycling through green, yellow, and red lights with appropriate timing. The design uses a Mealy FSM written in behavioral Verilog and integrates a sensor to dynamically adjust light changes depending on traffic conditions.
 
 ## Features
 - **FSM-Based Control** – Implemented using a Mealy finite state machine for precise sequencing.  
@@ -39,6 +39,6 @@ This project demonstrates the design and implementation of a **traffic light con
   - In highway green state, if the sensor is high (and ≥30 seconds elapsed), it switches to yellow.  
   - In farm green state, if the sensor goes low, it transitions back to yellow.  
 
-{% include image-gallery.html images="traffic_light_fsm.png" height="400" %}  
+{% include image-gallery.html images="fsm.png" height="400" %}  
 
 ---
