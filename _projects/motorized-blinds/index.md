@@ -8,5 +8,5 @@ skills:
 - Breadboarding
 - Basic Circuit Desgin
 - C++
-main-image: /coverPhoto.jpeg
+main-image: /coverPhoto.png
 ---
