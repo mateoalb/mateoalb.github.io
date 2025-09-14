@@ -35,5 +35,63 @@ This project showcases my custom built motorized blind, designed to integrate se
 ---
 ## 3D Printed
 - To bridge the gap between the motors and the blinds’ tilt rod, I designed a custom 3D-printed connector. This part ensures a secure, reliable fit while remaining easy to remove or swap. The connector was ajdusted for each type
-{% include image-gallery.html images="mount3Dfile.png" height="400" %} 
+    {% include image-gallery.html images="mount3Dfile.png" height="400" %} 
+
+---
+## Code
+- DC Motor Code - adjusted the windowshade example code in Homespan library to fit
+  ```cpp
+    #include "HomeSpan.h"
+    #include <Servo.h>
   
+    struct DEV_WindowShade : Service::WindowCovering {
+      Characteristic::CurrentPosition currentPos{0,true};
+      Characteristic::TargetPosition targetPos{0,true};
+      Servo servo;
+      int servoPin;
+    
+      DEV_WindowShade(int pin) : Service::WindowCovering() {
+        servoPin = pin;
+        servo.attach(servoPin);
+    
+        LOG0("Initial Shade Position: %d\n", currentPos.getVal());
+        // Move servo to initial position
+        int angle = map(currentPos.getVal(), 0, 100, 0, 180);
+        servo.write(angle);
+      }
+      boolean update() {
+    
+        if (targetPos.updated()) {
+          int angle = map(targetPos.getNewVal(), 0, 100, 0, 180);   // scale HomeKit
+          servo.write(angle);
+    
+          LOG1("Setting Shade Position=%d (Servo Angle=%d)\n", targetPos.getNewVal(), angle);
+    
+          // Update current position immediately (servo moves directly)
+          currentPos.setVal(targetPos.getNewVal());
+        }
+    
+        return (true);
+      }
+    
+      void loop() {
+        // Nothing needed here since servo moves immediately
+      }
+    };
+    
+    void setup() {
+      Serial.begin(115200);
+    
+      homeSpan.begin(Category::WindowCoverings, "Servo Shade");
+    
+      new SpanAccessory();
+        new Service::AccessoryInformation();
+          new Characteristic::Identify();
+        new DEV_WindowShade(23);   // attach servo to GPIO 23 (change if needed)
+    }
+    void loop() {
+      homeSpan.poll();
+    }
+  ```
+  
+- Servo Code - adjusted the windowshade example code in Homespan library to fit
