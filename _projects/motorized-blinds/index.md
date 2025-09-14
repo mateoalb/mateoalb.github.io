@@ -39,7 +39,7 @@ This project showcases my custom built motorized blind, designed to integrate se
 
 ---
 ## Code
-- DC Motor Code - adjusted the windowshade example code in Homespan library to fit
+- Servo Code - adjusted the windowshade example code in Homespan library to fit
   ```cpp
     #include "HomeSpan.h"
     #include <Servo.h>
@@ -94,4 +94,66 @@ This project showcases my custom built motorized blind, designed to integrate se
     }
   ```
   
-- Servo Code - adjusted the windowshade example code in Homespan library to fit
+- DC Motor Code - adjusted the windowshade example code in Homespan library to fit
+  ```cpp
+   #include "HomeSpan.h"
+  
+    struct DEV_WindowShade : Service::WindowCovering {
+    
+      Characteristic::CurrentPosition currentPos{0,true};
+      Characteristic::TargetPosition targetPos{0,true};
+      
+      StepperControl *mainMotor;   // motor to open/close shade
+    
+      DEV_WindowShade(StepperControl *mainMotor) : Service::WindowCovering(){
+    
+        this->mainMotor=mainMotor;                         
+               
+        mainMotor->setAccel(10,20);                         // set acceleration parameters
+        mainMotor->setStepType(StepperControl::HALF_STEP);  // set step type
+    
+        LOG0("Initial Open/Close Position: %d\n",currentPos.getVal());
+        
+        mainMotor->setPosition(currentPos.getVal()*20);     // define initial position
+      }
+      boolean update(){
+        if(targetPos.updated()){
+          // Move motor to absolute position
+          // Assuming 400 steps/rev and 5 revs for full open/close = 2000 steps
+          // Multiply targetPos (0-100) by 20
+          mainMotor->moveTo(targetPos.getNewVal()*20,5,StepperControl::BRAKE);
+          LOG1("Setting Shade Position=%d\n",targetPos.getNewVal());
+        }
+    
+        return(true);
+      }
+    
+      void loop(){
+    
+        // Update Current Position when motor stops
+        if(currentPos.getVal()!=targetPos.getVal() && !mainMotor->stepsRemaining()){
+          currentPos.setVal(targetPos.getVal());
+          LOG1("Main Motor Stopped at Shade Position=%d\n",currentPos.getVal());
+        }           
+      }
+      
+    };
+    void setup() {
+    
+      Serial.begin(115200);
+    
+      homeSpan.begin(Category::WindowCoverings,"Motorized Shade");
+    
+      new SpanAccessory();                                                          
+        new Service::AccessoryInformation();
+          new Characteristic::Identify(); 
+        // Instantiate single stepper driver (example uses TB6612)
+        new DEV_WindowShade(new Stepper_TB6612(23,32,22,14,33,27));
+    }
+    
+    void loop(){
+      
+      homeSpan.poll();  
+    }
+
+  ```
