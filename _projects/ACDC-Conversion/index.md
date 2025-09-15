@@ -43,8 +43,6 @@ This project focused on converting DC-driven periodic waveforms, such as square 
 - **Objective:** The op-amp oscillator generated square, triangle, and sine waves from a single circuit.  
 - **Results:** The oscillator demonstrated the ability to produce multiple waveforms simultaneously, showcasing how an active feedback network can be used to generate a variety of AC signals from a DC input.
 
-{% include image-gallery.html images="rc_waveform.png" height="400" %}
-
 ---
 ## Results
 - The triangle wave was effectively transformed into a sine wave after low-pass filtering.  
