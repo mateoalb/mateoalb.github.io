@@ -70,22 +70,13 @@ formspree-key:   https://formspree.io/f/myzdvjgb
 
 # Active theme (Updatethis to switch themes). Make sure to keep the indentation the samne.
 colors:
-  text: "#1e2a38"
-  border: "#cfd8dc"
-  link: "#0288d1"
-  highlight: "#03a9f4"
-  background: "#e1f5fe"
-  light_background: "#f0f7fa"
+  text: "#2c3e50"
+  border: "#d5e8e6"
+  link: "#1abc9c"
+  highlight: "#16a085"
+  background: "#ecf9f7"
+  light_background: "#f5fcfa"
 
-
-
-basiccolors: # this is the basic theme
-  text: "#1a1c20"
-  border: "#ddd"
-  link: "#4a76ee"
-  highlight: "#0c0cf2"
-  background: "#ffffff"
-  light_background: "#f3f5fb"
 
 
 
