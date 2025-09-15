@@ -15,7 +15,7 @@ title: Mateo Albrecht's Portfolio # This is what shows up in the tab of the brow
 name: Mateo Albrecht
 headline: Computer Engineering Student at Texas A&M
 description: >- # dont remove this line. this will ignore all new lines until the next section
-  Experience in embedded systems, electronics, and software development. Skilled in ESP32 projects, circuit design, 
+  Experience in embedded systems, electronics, and software development. Skilled in microcontroller projects, circuit design, 
   and 3D-printed hardware integration. Passionate about creating innovative solutions that connect hardware and software.
 
 # Place your profile image in /assets/images/profile-image/folder and edit the file name
