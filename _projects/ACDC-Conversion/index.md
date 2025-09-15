@@ -8,55 +8,52 @@ skills:
 - Oscillators
 - Signal Processing
 - Oscilloscope Analysis
-main-image: /rc_waveform.png
+main-image: /opAmp.webp
 ---
 
----
 # Overview
-This project explored how **RC circuits** and **op-amp oscillators** can be used to transform input signals and generate different waveforms. The lab focused on converting **DC-driven square and triangle waves into sinusoidal AC signals**, as well as building a circuit capable of producing **square, triangle, and sine waves simultaneously**.
+This project focused on converting DC-driven periodic waveforms, such as square and triangle waves, into smooth sinusoidal AC signals using RC circuits and op-amps. The objective was to take basic DC signals and convert them into stable AC waveforms suitable for various applications. By using RC low-pass filters and op-amp oscillators, I was able to demonstrate how different waveforms can be shaped and generated from a single DC input source.
 
 ## Features
-- **RC Low-Pass Filtering** – Converted a triangle wave into a sinusoidal signal.  
-- **Square-to-Sine Conversion** – Demonstrated waveform smoothing through cascaded filters.  
-- **Op-Amp Oscillator Circuit** – Generated square, triangle, and sine wave outputs from a single circuit.  
-- **Frequency Response Analysis** – Tested different cutoff frequencies and input frequencies to study waveform shaping.  
+- **RC Low-Pass Filtering** – Converted triangle and square waves into sinusoidal signals.  
+- **Waveform Shaping** – Smoothed out sharp transitions in square waves to generate more sinusoidal-like waveforms.  
+- **Op-Amp Oscillator Circuit** – Generated multiple waveforms (square, triangle, and sine) simultaneously from a single circuit.  
+- **Frequency Response Analysis** – Investigated how cutoff frequencies and input frequencies affect the smoothness of the output waveforms.
 
 ---
 ## Hardware
-- **Op-Amps** – Configured as active filters and oscillators.  
-- **Resistors & Capacitors** – Implemented low-pass filtering with tunable cutoff frequencies.  
-- **Signal Generator** – Provided square and triangle input waveforms.  
-- **Oscilloscope** – Captured and analyzed input/output waveforms.  
+- **Op-Amps** – Configured as active filters and oscillators to generate and shape the waveforms.  
+- **Resistors & Capacitors** – Used to build low-pass filters with adjustable cutoff frequencies to smooth out the input waveforms.  
+- **Signal Generator** – Provided the initial square and triangle waveforms driven by a DC source.  
+- **Oscilloscope** – Monitored and analyzed the waveform outputs to verify the conversion process.
 
 ---
 ## Circuit Design
-### Task 1 – RC Low-Pass Filter  
-- Input: 250 Hz triangle wave (2 Vpp).  
-- Output: Smoothed waveform approaching a sine wave.  
-- Adjusted input frequency until waveform appeared most sinusoidal (~1.2 kHz).  
+### RC Low-Pass Filter  
+- **Input:** 250 Hz triangle wave (2 Vpp).  
+- **Output:** The triangle wave was filtered into a sinusoidal signal by adjusting the cutoff frequency (~1.2 kHz).  
+- **Outcome:** A smooth sinusoidal waveform was generated from the triangle wave input, demonstrating the filtering effect.
 
-### Task 2 – Square Wave Input & Cascaded Filters  
-- Input: 250 Hz square wave.  
-- Single RC filter produced partial smoothing.  
-- **Back-to-back RC filters** greatly improved sinusoidal output.  
-- Varying cutoff frequency demonstrated amplitude and waveform changes.  
+### Square-to-Sine Conversion  
+- **Input:** 250 Hz square wave.  
+- **Filter Process:** The square wave was passed through a single RC filter, resulting in a partial smoothing. A second RC filter was added to further refine the output into a cleaner sine wave.  
+- **Frequency Adjustments:** By tweaking the cutoff frequencies, the amplitude and smoothness of the sine wave output were optimized, highlighting the importance of filter design.
 
-### Task 3 – Oscillator Circuit  
-- Built op-amp oscillator with feedback network.  
-- Generated **square, triangle, and sine waves simultaneously** at different circuit nodes.  
-- Demonstrated waveform shaping and frequency tuning via resistors, capacitors, and potentiometer adjustment.  
+### Oscillator Circuit  
+- **Objective:** The op-amp oscillator generated square, triangle, and sine waves from a single circuit.  
+- **Results:** The oscillator demonstrated the ability to produce multiple waveforms simultaneously, showcasing how an active feedback network can be used to generate a variety of AC signals from a DC input.
 
-{% include image-gallery.html images="rc_waveform.png" height="400" %}  
+{% include image-gallery.html images="rc_waveform.png" height="400" %}
 
 ---
 ## Results
-- Triangle wave filtered into a near-sine at ~1.2 kHz.  
-- Square wave input required cascaded filters for effective sinusoidal output.  
-- Cutoff frequency directly influenced amplitude and smoothness.  
-- Oscillator produced three distinct waveforms (square, triangle, sine) at once, confirming proper circuit design.  
+- The triangle wave was effectively transformed into a sine wave after low-pass filtering.  
+- The square wave required cascaded filters for smooth conversion into a clean sinusoidal output.  
+- The op-amp oscillator successfully generated square, triangle, and sine waves simultaneously, demonstrating the versatility of the circuit design.  
+- The filter cutoff frequencies significantly impacted the amplitude, smoothness, and overall quality of the waveforms.
 
 ---
 # Summary
-This project demonstrated how **RC filters and oscillator circuits** can be used to transform basic periodic signals into sinusoidal AC waveforms. By filtering triangle and square waves, then expanding to a full oscillator design, I was able to generate sine, triangle, and square outputs from a single setup.  
+This project demonstrated how **RC filters and oscillator circuits** can convert DC-driven waveforms into smooth, sinusoidal AC outputs. By designing and testing low-pass filters and an op-amp oscillator, I was able to transform square and triangle waves into clean sine waves. The process highlighted the role of filter design, frequency tuning, and the use of op-amps in waveform generation.
 
-The importance of this project lies in the **hands-on understanding of electronic components**. Working with resistors, capacitors, and op-amps showed how each component directly affects frequency response, waveform shaping, and overall circuit behavior. Beyond confirming theoretical knowledge, this experience proved my ability to design, adjust, and analyze circuits that perform practical signal conversions.
+Through this hands-on project, I gained a deeper understanding of how electronic components like resistors, capacitors, and op-amps influence waveform behavior. This experience reinforced my ability to design, analyze, and optimize circuits for practical signal conversion, laying the foundation for more advanced signal processing applications.
